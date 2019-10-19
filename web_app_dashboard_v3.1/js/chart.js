@@ -36,6 +36,7 @@ var chart = new Chart(ctx, {
 });
 
 //bar chart
+
 var barChart = document.getElementById('barChart').getContext('2d');
 var chart2 = new Chart(barChart, {
     // The type of chart we want to create
@@ -57,3 +58,23 @@ var chart2 = new Chart(barChart, {
 });
 
 //doughnut chart
+
+var doughnutChart = document.getElementById('doughnutChart').getContext('2d');
+var chart3 = new Chart(doughnutChart, {
+    type: 'doughnut',
+    data: {
+        labels: ['Phones', 'Tablets', 'Desktops'],
+        datasets: [{
+            label: 'My First dataset',
+            backgroundColor: ['rgb(255, 99, 132)', '#e67e22', '#2980b9'],
+            borderColor: ['rgb(255, 99, 132)', '#e67e22', '#2980b9'],
+            data: [ 40, 45, 147]
+        }]
+    },
+    options: {
+      cutoutPercentage: 60,
+      animation: {
+        animateScale: true
+      }
+    }
+});
