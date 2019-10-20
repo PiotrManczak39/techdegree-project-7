@@ -9,33 +9,41 @@
   display: grid;
 }
 
-body {
-  background-color: lightblue;
-}
-
-h2 {
-  text-align: center;
-}
+/*-----------------------------
+        HEADER STYLING
+-----------------------------*/
 
 header {
+  background-color: #3f3aa1;
   display: flex;
-  flex-direction: row;
   background-color: blue;
-  padding: 1em 0.25em;
+  padding: 0.25em;
   align-items: center;
 }
 
 header p:nth-child(4) {
   color: white;
-  padding-right: 1em;
+  padding: 0 1em;
   font-weight: bold;
 }
 
 header p:nth-child(1) {
   margin-right: auto;
+  color: white;
+  padding-left: 1em;
+  font-size: 1.2em;
 }
 
+svg {
+  fill: #FFFFFF;
+}
+
+/*-----------------------------
+      NAVIGATION STYLING
+-----------------------------*/
+
 nav {
+  background: #464563;
   padding: 1em 0;
   display: flex;
   flex-direction: row;
@@ -45,20 +53,23 @@ nav {
 .icon-bell {
   border-right: solid .5px #230d0dd4;
   padding-right: 1em;
+  position: relative;
 }
 
-.icon-bell::after {
+.icon-bell span {
   content: "";
-  display: inline-block;
-  width: 16px;
-  height: 16px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
   background: green;
+  position: absolute;
+  top: -10%;
+  left: 60%;
 }
 
 .header-icon,
 .nav-icon {
-  width: 3em;
+  width: 6em;
   padding: 0 2em;
 }
 
@@ -67,6 +78,13 @@ nav {
   width: 2em;
   height: 2em;
   margin-left: 1em;
+}
+
+.search-team {
+  display: flex;
+  align-items: center;
+  width: 90%;
+  margin: auto;
 }
 
 .barchart-title {
@@ -78,11 +96,12 @@ nav {
        Searchbox Design
 ------------------------------*/
 
-.search-wrap {
-  text-align: center;
+h2 {
+  font-size: 1.1em;
 }
 
 .search {
+  margin-left: auto;
   display: inline;
   padding: 0.7em 0;
   position: relative;
@@ -105,26 +124,27 @@ nav {
        Alertbox Styling
 ------------------------------*/
 
+.alert-container {
+  border-top: solid 1px gray;
+  padding-top: .75em;
+  padding-bottom: .75em;
+}
+
 .alert-box {
+  width: 90%;
   display: flex;
-  justify-content: center;
-}
-
-.alert {
-  width: 70%;
-  background: #008068;
-  padding: 1em;
+  flex-direction: row;
+  align-items: center;
+  margin: auto;
+  background-color: #3f3aa1;
   border-radius: 10px;
+  padding: 0 .75em;
 }
 
-.alert button {
-  background: #008068;
+.close-button {
   border: none;
+  background-color: #3f3aa1;
 }
-
-/*------------------------------
-       Close Button Styling
-------------------------------*/
 
 .close-button {
   color: white;
@@ -137,14 +157,14 @@ nav {
 .chart-buttons {
   margin: auto;
   width: 90%;
-  display: flex;
-  flex-direction: row;
 }
 
 .chart-buttons button {
-  background-color: lightblue;
-  margin-left: 5px;
+  padding: 10px;
+  margin-left: .5em;
   border: none;
+  border-radius: 15px;
+  height: 2.5em;
 }
 
 .chart-buttons h4 {
@@ -154,6 +174,13 @@ nav {
 /*--------------------------------
        Social Icons Styling
 --------------------------------*/
+
+.twitter-container,
+.facebook-container,
+.google-container {
+  padding: .75em;
+}
+
 .twitter-icon,
 .facebook-icon,
 .google-icon  {
@@ -167,50 +194,105 @@ nav {
 .facebook-box,
 .google-box {
   position: relative;
-  border: solid black 1px;
+  border: solid gray 1px;
   border-radius: 50%;
   background-color: blue;
   width: 5em;
   height: 5em;
+  margin-left: 1.2em;
 }
 
 .twitter-data,
 .facebook-data,
 .google-data {
   display: flex;
-  flex-direction: row;
-  border: solid 2px black;
-  justify-content: space-around;
+  border: solid 1px lightgray;
+  background-color: #f5eeed;
+  padding: 1em;
+  border-radius: 7px;
+  align-items: center;
+}
+
+.social-medium-data {
+  margin-left: auto;
+  margin-right: 1.2em;
+}
+
+.social-medium-data p:nth-child(1) {
+  color: blue;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.social-medium-data p:nth-child(2) {
+  color: gray;
+  font-size: 1.5em;
 }
 
 /*--------------------------------
        Members Styling
 --------------------------------*/
 
+.new-members-container {
+  border: solid 1px lightgray;
+}
+
+.members-heading {
+  padding-top: 2em;
+  width: 95%;
+  margin: auto;
+}
+
 .member-container {
+  padding: 1.5em 0;
+  width: 95%;
   display: flex;
   align-items: center;
+  margin: auto;
 }
 
 .member-data {
   margin-right: auto;
+  padding: 0 5px;
+  line-height: 5px;
 }
 
 .member-img {
   border-radius: 50%;
+  width: 12%;
+}
+
+.border-bottom {
+  border-bottom: solid 1px lightgray;
 }
 
 /*--------------------------------
        Recent Activity Styling
 --------------------------------*/
 
+.recent-activity-container {
+  border: solid 1px lightgray;
+}
+
+.activity-heading {
+  padding-top: 2em;
+  width: 95%;
+  margin: auto;
+}
+
+.member-data-bis {
+  margin-right: auto;
+}
+
 .activity-container {
   display: flex;
   align-items: center;
+  width: 95%;
+  margin: auto;
 }
 
 .more-than {
-  font-size: 3em;
+  font-size: 2em;
 }
 
 /*--------------------------------
@@ -218,14 +300,19 @@ nav {
 --------------------------------*/
 
 .message-user-container {
-  border-top: solid 1px black;
+  border: solid 1px lightgray;
+}
+
+.message-user-container p {
+  padding-top: 2em;
 }
 
 .message-user-container input,
 .message-user-container textarea,
-.message-user-container button {
+.message-user-container button,
+.message-user-container p {
   display: block;
-  width: 90%;
+  width: 95%;
   margin: auto;
   margin-bottom: 1em;
   border-radius: 5px;
@@ -293,9 +380,16 @@ nav {
 --------------------------------*/
 
 .settings-container {
-  width: 90%;
+  border: solid 1px lightgray;
+}
+
+.settings-centring {
+  width: 95%;
   margin: auto;
-  border-top: solid 1px black;
+}
+
+.setting-heading {
+  padding-top: 2em;
 }
 
 .first-widget,
@@ -303,6 +397,11 @@ nav {
   display: flex;
   align-items: center;
   margin-bottom: 1em;
+}
+
+.onoffswitch {
+  margin-right: 1em;
+  margin-left: auto;
 }
 
 #myList {
@@ -324,4 +423,8 @@ nav {
   padding: 10px;
   background: steelblue;
   width: 45%;
+}
+
+.buttons button:nth-child(2) {
+  background-color: gray;
 }

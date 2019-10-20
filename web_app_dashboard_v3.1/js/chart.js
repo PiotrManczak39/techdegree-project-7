@@ -1,4 +1,4 @@
-const alertButton = document.querySelector('.alert button');
+const alertButton = document.querySelector('.close-button');
 const alertBox = document.querySelector('.alert-box');
 
 alertButton.addEventListener('click', () => {
