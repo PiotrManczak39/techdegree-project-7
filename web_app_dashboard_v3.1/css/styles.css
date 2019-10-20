@@ -38,6 +38,16 @@ svg {
   fill: #FFFFFF;
 }
 
+.bell-alert {
+  transition-duration: .75s;
+  transition-delay: .5s;
+}
+
+.bell-alert:hover {
+  fill: #d36a62;
+  transform: rotate(-35deg) scale(1.5);
+}
+
 /*-----------------------------
       NAVIGATION STYLING
 -----------------------------*/
@@ -154,6 +164,13 @@ h2 {
        Chart Buttons Styling
 --------------------------------*/
 
+.main-chart-container,
+.bar-chart-container,
+.doughnut-chart-container {
+  border-bottom: solid 1px lightgray;
+  padding: 1em 0;
+}
+
 .chart-buttons {
   margin: auto;
   width: 90%;
@@ -174,6 +191,10 @@ h2 {
 /*--------------------------------
        Social Icons Styling
 --------------------------------*/
+
+.social-grid-container {
+  border: solid 1px lightgray;
+}
 
 .twitter-container,
 .facebook-container,
@@ -427,4 +448,86 @@ h2 {
 
 .buttons button:nth-child(2) {
   background-color: gray;
+}
+
+/*--------------------------------
+       Media Queries 768px
+--------------------------------*/
+
+@media (min-width: 768px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: minmax(90px, 1fr) 6fr;
+  }
+  nav {
+    grid-column: 1 / 2;
+    grid-row: 2 / 13;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .nav-icon {
+    padding-top: 3em;
+  }
+  header {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+  .member-data {
+    padding-left: 2em;
+  }
+  .chart-buttons {
+    display: flex;
+    align-items: center;
+  }
+  .social-grid-container-inside,
+  .new-members-container-inside,
+  .recent-activity-container-inside {
+    width: 90%;
+    margin: auto;
+    border-left: none;
+    border-right: none;
+    padding: 2em 0;
+  }
+
+/*--------------------------------
+       Media Queries 1024px
+--------------------------------*/
+
+@media (min-width: 1024px) {
+
+  .grid {
+    grid-template-columns: minmax(100px, 2fr) repeat(2, 5fr);
+  }
+  header {
+    grid-column: 1 / 4;
+  }
+  nav {
+    grid-column: 1 / 2;
+    grid-row: 2 / 12;
+  }
+  .search-team,
+  .alert-container,
+  .main-chart-container,
+  .social-grid-container {
+    grid-column: 2 / 4;
+  }
+  .bar-chart-container {
+    grid-column: 2 / 3;
+  }
+  .doughnut-chart-container {
+    grid-column: 3 / 4;
+  }
+  .social {
+    display: flex;
+    justify-content: space-between;
+  }
+  .twitter-container,
+  .facebook-container,
+  .google-container {
+    width: 33%;
+  }
+  .bar-chart-container {
+    border: solid 1px lightgray;
+  }
 }
