@@ -1,8 +1,24 @@
 const alertButton = document.querySelector('.close-button');
 const alertBox = document.querySelector('.alert-box');
+const user = document.getElementById("userField");
+const message = document.getElementById("messageField");
+const send = document.getElementById("sendButton");
+
 
 alertButton.addEventListener('click', () => {
     alertBox.style.display = 'none';
+});
+
+send.addEventListener('click', () => {
+  if (user.value === "" && message.value === "") {
+    alert("Please fill out user and message fields before sending");
+  } else if (user.value === "" ) {
+    alert("Please fill out user field before sending");
+  } else if (message.value === "" ) {
+    alert("Please fill out message field before sending");
+  } else {
+    alert(`Message successfully sent to: ${user.value}`);
+  }
 });
 
 //main chart
@@ -53,7 +69,14 @@ var chart2 = new Chart(barChart, {
     options: {
       legend: {
         display: false
-      }
+      },
+      scales: {
+        yAxes: [{
+          ticks: {
+            beginAtZero:true
+          }
+        }]
+      },
     }
 });
 
@@ -75,6 +98,9 @@ var chart3 = new Chart(doughnutChart, {
       cutoutPercentage: 60,
       animation: {
         animateScale: true
+      },
+      legend : {
+        display: false
       }
     }
 });
