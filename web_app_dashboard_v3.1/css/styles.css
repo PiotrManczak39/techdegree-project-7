@@ -354,50 +354,61 @@ h2 {
        Swiches/Widgets Styling
 --------------------------------*/
 
-.onoffswitch {
-    position: relative; width: 90px;
-    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+.button-area {
+  background-color: #7572bb;
+  width: 7.7em;
+  padding: 1em;
+  border-radius: 25px;
+  margin-left: auto;
+  text-align: center;
+  position: relative;
+  border-width: 2px red;
+  display: flex;
+  border: solid 2px lightgray;
 }
-.onoffswitch-checkbox {
-    display: none;
+
+.button-area2 {
+  background-color: #7572bb;
+  width: 7.7em;
+  padding: 1em;
+  border-radius: 25px;
+  margin-left: auto;
+  text-align: center;
+  position: relative;
+  border-width: 2px red;
+  display: flex;
+  border: solid 2px lightgray;
 }
-.onoffswitch-label {
-    display: block; overflow: hidden; cursor: pointer;
-    border: 2px solid #999999; border-radius: 20px;
+
+.on  {
+   color: white;
 }
-.onoffswitch-inner {
-    display: block; width: 200%; margin-left: -100%;
-    transition: margin 0.3s ease-in 0s;
+
+.off {
+   color: white;
+   padding-left: 2em;
 }
-.onoffswitch-inner:before, .onoffswitch-inner:after {
-    display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
-    font-size: 19px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
-    box-sizing: border-box;
+
+.circle {
+  background: white;
+  padding: 20px;
+  border-radius: 50%;
+  position: absolute;
+  top: 2.5px;
+  left: 12px;
+  border: solid 2px lightgray;
+  transition: .5s ease-out 0.2s;
 }
-.onoffswitch-inner:before {
-    content: "ON";
-    padding-left: 17px;
-    background-color: #34A7C1; color: #FFFFFF;
-}
-.onoffswitch-inner:after {
-    content: "OFF";
-    padding-right: 17px;
-    background-color: #EEEEEE; color: #999999;
-    text-align: right;
-}
-.onoffswitch-switch {
-    display: block; width: 18px; margin: 6px;
-    background: #FFFFFF;
-    position: absolute; top: 0; bottom: 0;
-    right: 56px;
-    border: 2px solid #999999; border-radius: 20px;
-    transition: all 0.3s ease-in 0s;
-}
-.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
-    margin-left: 0;
-}
-.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
-    right: 0px;
+
+.circle2 {
+  background: white;
+  padding: 20px;
+  border-radius: 50%;
+  position: absolute;
+  top: 2.5px;
+  left: 65px;
+  border: solid 2px lightgray;
+  transition: .5s ease-out 0.2s;
 }
 
 
@@ -425,22 +436,29 @@ h2 {
   margin-bottom: .83em;
 }
 
-.onoffswitch {
-  margin-right: 1em;
-  margin-left: auto;
+.second-widget {
+  max-width: 95%;
+  margin: auto;
+  padding-bottom: .5em;
 }
 
 #myList {
   border-radius: 9px;
   padding: 10px;
   margin-bottom: 1em;
-  width: 100%;
+  width: 95%;
+}
+
+.dropdown {
+  text-align: center;
 }
 
 .buttons {
   display: flex;
   justify-content: space-between;
-  padding-bottom: 2em;
+  padding: 1em 0;
+  width: 95%;
+  margin:auto;
 }
 
 .buttons button {

@@ -7,17 +7,11 @@ const bell = document.querySelector('.bell-alert');
 const timePeriods = document.querySelectorAll('.chart-buttons button');
 const ctx = document.getElementById('mainChart').getContext('2d');
 const chartChoice = document.querySelector('.chart-buttons');
+const widget = document.querySelector('.button-area');
+const widget2 = document.querySelector('.button-area2');
+const wlacznik = document.getElementById('wlacznik');
+const wlacznik2 = document.getElementById('wlacznik2');
 
-// chartChoice.addEventListener('click', (e) => {
-//   let choice = event.target;
-//   for ( let i=0; i<timePeriods.length; i++) {
-//     if ( choice == timePeriods[i] ) {
-//       choice.className = 'highlight';
-//     } else {
-//       timePeriods[i].className = '';
-//     }
-//   }
-// });
 
 bell.addEventListener('click', () => {
   alert('You have clicked on the bell!');
@@ -54,7 +48,6 @@ send.addEventListener('click', () => {
 
 var barChart = document.getElementById('barChart').getContext('2d');
 var chart2 = new Chart(barChart, {
-    // The type of chart we want to create
     type: 'bar',
     data: {
       labels: ["S", "M", "T", "W", "T", "F", "S"],
@@ -215,18 +208,24 @@ chartChoice.addEventListener('click', (e) => {
   }
 });
 
+widget.addEventListener('click', () => {
+  if ( wlacznik.className == 'circle' ) {
+    wlacznik.className = 'circle2';
+    widget.style.backgroundColor = 'green';
+    widget.style.transition = '.5s ease-out .2s';
+  } else {
+    wlacznik.className = 'circle';
+    widget.style.backgroundColor = 'red';
+  }
+});
 
-// var chart = new Chart(ctx, {
-//     type: 'line',
-//     data: Weekly,
-//     options: {
-//       title: {
-//         display: true,
-//         text: 'TRAFFIC',
-//         position: 'top'
-//       },
-//       legend: {
-//         display: false
-//       }
-//     }
-// });
+widget2.addEventListener('click', () => {
+  if ( wlacznik2.className == 'circle' ) {
+    wlacznik2.className = 'circle2';
+    widget2.style.backgroundColor = 'green';
+    widget2.style.transition = '.5s ease-out .2s';
+  } else {
+    wlacznik2.className = 'circle';
+    widget2.style.backgroundColor = 'red';
+  }
+});
