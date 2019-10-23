@@ -11,12 +11,8 @@ const widget = document.querySelector('.button-area');
 const widget2 = document.querySelector('.button-area2');
 const wlacznik = document.getElementById('wlacznik');
 const wlacznik2 = document.getElementById('wlacznik2');
-
-
-bell.addEventListener('click', () => {
-  alert('You have clicked on the bell!');
-  alert('You did it again, I guess now you know for sure that bell is working!');
-});
+let currentSetting = localStorage.getItem('stan');
+let currentSetting2 = localStorage.getItem('stan2');
 
 alertButton.addEventListener('click', () => {
     alertBox.style.display = 'none';
@@ -213,9 +209,13 @@ widget.addEventListener('click', () => {
     wlacznik.className = 'circle2';
     widget.style.backgroundColor = 'green';
     widget.style.transition = '.5s ease-out .2s';
+    localStorage.setItem('stan', 'on');
+    let currentSetting = localStorage.getItem('stan');
   } else {
     wlacznik.className = 'circle';
     widget.style.backgroundColor = 'red';
+    localStorage.setItem('stan', 'off');
+    let currentSetting = localStorage.getItem('stan');
   }
 });
 
@@ -224,8 +224,25 @@ widget2.addEventListener('click', () => {
     wlacznik2.className = 'circle2';
     widget2.style.backgroundColor = 'green';
     widget2.style.transition = '.5s ease-out .2s';
+    localStorage.setItem('stan2', 'on');
+    let currentSetting = localStorage.getItem('stan2');
   } else {
     wlacznik2.className = 'circle';
     widget2.style.backgroundColor = 'red';
+    localStorage.setItem('stan2', 'off');
+    let currentSetting = localStorage.getItem('stan2');
   }
 });
+
+
+if ( currentSetting == 'on' ) {
+  wlacznik.className = 'circle2';
+} else {
+  wlacznik.className = 'circle';
+}
+
+if ( currentSetting2 == 'on' ) {
+  wlacznik2.className = 'circle2';
+} else {
+  wlacznik2.className = 'circle';
+}

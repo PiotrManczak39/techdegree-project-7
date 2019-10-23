@@ -21,13 +21,46 @@ header {
   align-items: center;
 }
 
-header p:nth-child(4) {
+.pop-up-container {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  background-color: gray;
+  position: absolute;
+  top: 0px;
+  left: -150px;
+  z-index: 1000;
+}
+
+.pop-up-group1,
+.pop-up-group2 {
+  display: flex;
+}
+
+.pop-up-container p {
+  color: white;
+  display: inline-block;
+  margin: auto;
+  width: 100%;
+  padding: .95em;
+}
+
+.notification2 {
+  border-top: solid 1px lightgray;
+}
+
+.notification1 button,
+.notification2 button {
+  margin-left: auto;
+}
+
+.sullivan {
   color: white;
   padding: 0 1em;
   font-weight: bold;
 }
 
-header p:nth-child(1) {
+.trade-mark {
   margin-right: auto;
   color: white;
   padding-left: 1em;
@@ -46,6 +79,11 @@ svg {
 .bell-alert:hover {
   fill: #d36a62;
   transform: rotate(360deg) scale(1.5);
+}
+
+.notification1,
+.notification2 {
+  width: 100px;
 }
 
 /*-----------------------------
