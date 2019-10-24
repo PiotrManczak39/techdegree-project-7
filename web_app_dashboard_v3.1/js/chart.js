@@ -88,7 +88,7 @@ var chart3 = new Chart(doughnutChart, {
         animateScale: true
       },
       legend : {
-        display: false
+        display: true
       }
     }
 });
