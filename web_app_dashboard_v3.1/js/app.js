@@ -4,6 +4,7 @@ const notif2 = document.querySelector('.pop-up-group2 button');
 const message1 = document.querySelector('.pop-up-group1');
 const message2 = document.querySelector('.pop-up-group2');
 const dropdownList = document.querySelector('.dropdown');
+const timezoneInput = document.getElementById('myList');
 
 popup.style.display = 'none';
 
@@ -19,18 +20,11 @@ notif2.addEventListener('click', () => {
   message2.style.display = 'none';
 });
 
+//local storage for the timezone
+timezoneInput.addEventListener('change', () => {
+    localStorage.setItem('myList',timezoneInput.value);
+})
 
-const array = document.querySelectorAll('#myList option');
-
-const timeZoneList = document.getElementById('myList');
-timeZoneList.addEventListener('click', (event) => {
-  let currentArea = event.target.value;
-  for ( let i =0; i<array.length; i++ ) {
-    let currentOption = array[i];
-    if ( currentArea == currentOption.value ) {
-      console.log(currentOption);
-      localStorage.setItem('location', currentOption);
-      console.log(localStorage.getItem('location'));
-    }
-  }
-});
+if(localStorage.getItem('myList')){
+    timezoneInput.value = localStorage.getItem('myList');
+}
