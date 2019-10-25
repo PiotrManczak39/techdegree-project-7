@@ -20,7 +20,6 @@ notif2.addEventListener('click', () => {
   message2.style.display = 'none';
 });
 
-//local storage for the timezone
 timezoneInput.addEventListener('change', () => {
     localStorage.setItem('myList',timezoneInput.value);
 })
@@ -28,3 +27,11 @@ timezoneInput.addEventListener('change', () => {
 if(localStorage.getItem('myList')){
     timezoneInput.value = localStorage.getItem('myList');
 }
+
+var words = ['boat', 'bear', 'dog', 'drink', 'elephant', 'fruit'];
+
+$(document).ready(function(){
+	$('#userField').autocomplete({
+		hints: words
+	});
+});

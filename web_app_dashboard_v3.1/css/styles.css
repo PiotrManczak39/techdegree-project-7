@@ -209,6 +209,15 @@ h2 {
   padding: 1em 0;
 }
 
+.doughnut-chart-container {
+  border-top: solid 1px lightgray;
+  border-left: solid 1px lightgray;
+}
+
+.doughnut-chart-container h4 {
+  margin-left: 10%;
+}
+
 .chart-buttons {
   margin: auto;
   width: 90%;
