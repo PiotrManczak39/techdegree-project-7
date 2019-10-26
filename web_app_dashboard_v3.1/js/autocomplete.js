@@ -6,31 +6,31 @@ Author: Lorenzo Cioni - https://github.com/lorecioni
 
 (function($) {
 	$.fn.autocomplete = function(params) {
-		
+
 		//Selections
 		var currentSelection = -1;
 		var currentProposals = [];
-		
+
 		//Default parameters
-		params = $.extend({
-			hints: [],
-			placeholder: 'Search',
-			width: 200,
-			height: 16,
-			showButton: true,
-			buttonText: 'Search',
-			onSubmit: function(text){},
-			onBlur: function(){}
-		}, params);
+		// params = $.extend({
+		// 	hints: [],
+		// 	placeholder: 'Search',
+		// 	width: 200,
+		// 	height: 16,
+		// 	showButton: true,
+		// 	buttonText: 'Search',
+		// 	onSubmit: function(text){},
+		// 	onBlur: function(){}
+		// }, params);
 
 		//Build messagess
 		this.each(function() {
 			//Container
 			var searchContainer = $('<div></div>')
 				.addClass('autocomplete-container')
-				.css('height', params.height * 2);	
-				
-			//Text input		
+				.css('height', params.height * 2);
+
+			//Text input
 			var input = $('<input type="text" autocomplete="off" name="query">')
 				.attr('placeholder', params.placeholder)
 				.addClass('autocomplete-input')
@@ -38,7 +38,7 @@ Author: Lorenzo Cioni - https://github.com/lorecioni
 					'width' : params.width,
 					'height' : params.height
 				});
-			
+
 			if(params.showButton){
 				input.css('border-radius', '3px 0 0 3px');
 			}
@@ -52,7 +52,7 @@ Author: Lorenzo Cioni - https://github.com/lorecioni
 				.addClass('proposal-list');
 
 			proposals.append(proposalList);
-			
+
 			input.keydown(function(e) {
 				switch(e.which) {
 					case 38: // Up arrow
@@ -91,10 +91,10 @@ Author: Lorenzo Cioni - https://github.com/lorecioni
 						break;
 				}
 			});
-				
+
 			input.bind("paste keyup", function(e){
-				if(e.which != 13 && e.which != 27 
-						&& e.which != 38 && e.which != 40){				
+				if(e.which != 13 && e.which != 27
+						&& e.which != 38 && e.which != 40){
 					currentProposals = [];
 					currentSelection = -1;
 					proposalList.empty();
@@ -103,14 +103,14 @@ Author: Lorenzo Cioni - https://github.com/lorecioni
 						proposalList.empty();
 						for(var test in params.hints){
 							if(params.hints[test].match(word)){
-								currentProposals.push(params.hints[test]);	
+								currentProposals.push(params.hints[test]);
 								var element = $('<li></li>')
 									.html(params.hints[test])
 									.addClass('proposal')
 									.click(function(){
 										input.val($(this).html());
 										proposalList.empty();
-										params.onSubmit(input.val());
+										// params.onSubmit(input.val());
 									})
 									.mouseenter(function() {
 										$(this).addClass('selected');
@@ -124,16 +124,16 @@ Author: Lorenzo Cioni - https://github.com/lorecioni
 					}
 				}
 			});
-			
-			input.blur(function(e){
-				currentSelection = -1;
-				//proposalList.empty();
-				params.onBlur();
-			});
-			
+
+			// input.blur(function(e){
+			// 	currentSelection = -1;
+			// 	//proposalList.empty();
+			// 	params.onBlur();
+			// });
+
 			searchContainer.append(input);
-			searchContainer.append(proposals);		
-			
+			searchContainer.append(proposals);
+
 			if(params.showButton){
 				//Search button
 				var button = $('<div></div>')
@@ -147,11 +147,11 @@ Author: Lorenzo Cioni - https://github.com/lorecioni
 						proposalList.empty();
 						params.onSubmit(input.val());
 					});
-				searchContainer.append(button);	
+				searchContainer.append(button);
 			}
-	
-			$(this).append(searchContainer);	
-			
+
+			$(this).append(searchContainer);
+
 			if(params.showButton){
 				//Width fix
 				searchContainer.css('width', params.width + button.width() + 50);

@@ -6,6 +6,9 @@ const message2 = document.querySelector('.pop-up-group2');
 const dropdownList = document.querySelector('.dropdown');
 const timezoneInput = document.getElementById('myList');
 
+// const autocompleteButton = document.querySelector$('.autocomplete-button');
+// autocompleteButton.style.display = 'none';
+
 popup.style.display = 'none';
 
 bell.addEventListener('click', () => {
@@ -28,7 +31,9 @@ if(localStorage.getItem('myList')){
     timezoneInput.value = localStorage.getItem('myList');
 }
 
-var words = ['boat', 'bear', 'dog', 'drink', 'elephant', 'fruit'];
+var words = ['Dan Oliver', 'Dawn Wood', 'Dale Byrd',
+           'Victoria Chambers', 'vic.chambers80@example.com', 'dale.byrd52@example.com',
+           'dawn.wood16@example.com', 'dan.oliver82@example.com'];
 
 $(document).ready(function(){
 	$('#userField').autocomplete({

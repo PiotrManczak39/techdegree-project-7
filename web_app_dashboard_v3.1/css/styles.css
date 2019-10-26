@@ -379,7 +379,7 @@ h2 {
   padding-top: 2em;
 }
 
-.message-user-container input,
+.message-user-container #userField,
 .message-user-container textarea,
 .message-user-container button,
 .message-user-container p {
